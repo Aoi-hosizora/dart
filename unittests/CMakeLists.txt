@@ -69,6 +69,7 @@ foreach(test ${tests})
   if(MSVC)
     target_link_libraries(${base} dart optimized gtest debug gtestd)
   else()
+    target_link_libraries(${base} -Wl,--push-state,--no-as-needed ${LZ4_LIBRARIES} -Wl,--pop-state)
     target_link_libraries(${base} dart gtest)
   endif()
 

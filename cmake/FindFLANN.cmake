@@ -13,6 +13,7 @@ find_package(PkgConfig QUIET)
 
 # Check to see if pkgconfig is installed.
 pkg_check_modules(PC_FLANN flann QUIET)
+pkg_check_modules(LZ4 REQUIRED liblz4)
 
 # Include directories
 find_path(FLANN_INCLUDE_DIRS
